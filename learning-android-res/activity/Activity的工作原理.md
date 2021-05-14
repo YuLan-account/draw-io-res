@@ -15,7 +15,8 @@
 - onStop：这一步在下一个Activity的onResume执行完之后才执行，可以执行一些稍微重量级的回收操作，但是不要太耗时。
 
 - onDestroy：表示Activity即将被销毁，是生命周期最后一个回调，我们可以做一些重量级的回收操作。
-- ![activity_lifecycle](./asset/activity_lifecycle.png)
+
+  ![activity_lifecycle](./asset/activity_lifecycle.png)
 
 
 
@@ -28,9 +29,10 @@
   - onPause ---- onResume 界限Activity是否位于前台，是否可以接收用户交互。
 - onStart --- onStop 用于界限Activity是否可见，但不位于前台，所以无法与用户交互，例如前面弹了个Dialog。
 - 当我们旋转手机的时候，Activity也会随之旋转，伴随着的是Activity的销毁与创建，而为了避免这种额外的开销，我们可以在AndroidMainfest中配置该Activity的configChanges，并重写onRestoreInstanceState、onSaveInstanceState，来恢复页面元素的内容。
-- 
 
-<img src="./asset/jump_lifecycle.png" alt="jump_lifecycle" width="400"/>
+<div align=center>
+  <img src="./asset/jump_lifecycle.png" alt="jump_lifecycle" width="400"/>
+</div> 
 
 
 
@@ -40,13 +42,17 @@
 
 只要点击跳转，就创建一个新的Activity实例塞入到Activity栈中。
 
-<img src="./asset/activity_standard_launch.png" alt="activity_standard_launch" width="350" />
+<div align=center>
+  <img src="./asset/activity_standard_launch.png" alt="activity_standard_launch" width="350" />
+</div> 
+
+
 
 #### SingleTop
 
 先查看当前栈顶是否是目标Activity类型的实例，如果是，则不需要再创建新的Activity，否则，则创建新的Activity并塞入栈顶。
 
-<img src="./asset/activity_singleTop.png" alt="activity_singleTop" width="350" />
+<div align="center"><img src="./asset/activity_singleTop.png" alt="activity_singleTop" width="350" /></div>
 
 #### SingleTask
 
