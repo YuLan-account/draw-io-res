@@ -22,20 +22,17 @@
 #### 要知道的几个点
 
 - A跳转到B ：A执行完onPause之后就会马上执行B的onCreate -> onStart -> onResume 然后才会执行A的 onStop，所以不要再onPause执行太重的操作。
-
 - 当用户按back返回之后，会执行onPause -> onStop -> onDestroy
-
 - 当 Activity 被回收之后再次打开，生命周期就会从 onCreate开始
-
 - onPause ---- onResume，onStart --- onStop 看起来的确差不多，但是意义却差很远：
   - onPause ---- onResume 界限Activity是否位于前台，是否可以接收用户交互。
-
 - onStart --- onStop 用于界限Activity是否可见，但不位于前台，所以无法与用户交互，例如前面弹了个Dialog。
-
 - 当我们旋转手机的时候，Activity也会随之旋转，伴随着的是Activity的销毁与创建，而为了避免这种额外的开销，我们可以在AndroidMainfest中配置该Activity的configChanges，并重写onRestoreInstanceState、onSaveInstanceState，来恢复页面元素的内容。
+- 
+
+<img src="./asset/jump_lifecycle.png" alt="jump_lifecycle" width="400"/>
 
 
-<img src="./asset/jump_lifecycle.png" alt="jump_lifecycle" style="zoom:50%;" />
 
 ### 2. Activity Launch Mode
 
@@ -43,15 +40,13 @@
 
 只要点击跳转，就创建一个新的Activity实例塞入到Activity栈中。
 
-<img src="./asset/activity_standard_launch.png" alt="activity_standard_launch" style="zoom:50%;" />
+<img src="./asset/activity_standard_launch.png" alt="activity_standard_launch" width="350" />
 
 #### SingleTop
 
 先查看当前栈顶是否是目标Activity类型的实例，如果是，则不需要再创建新的Activity，否则，则创建新的Activity并塞入栈顶。
 
-![activity_singleTop](./asset/activity_singleTop.png)
-
-
+<img src="./asset/activity_singleTop.png" alt="activity_singleTop" width="350" />
 
 #### SingleTask
 
