@@ -34,7 +34,7 @@
 
 - 当我们旋转手机的时候，Activity也会随之旋转，伴随着的是Activity的销毁与创建，而为了避免这种额外的开销，我们可以在AndroidMainfest中配置该Activity的configChanges，并重写onRestoreInstanceState、onSaveInstanceState，来恢复页面元素的内容。
 
-  ![jump_lifecycle.png](https://github.com/YuLan-account/draw-io-res/blob/main/learning-android-res/activity/jump_lifecycle.png?raw=true)
+  <img src="https://github.com/YuLan-account/draw-io-res/blob/main/learning-android-res/activity/jump_lifecycle.png?raw=true" alt="jump_lifecycle.png" style="zoom:67%;" />
 
 
 
@@ -46,7 +46,7 @@
 
 只要点击跳转，就创建一个新的Activity实例塞入到Activity栈中。
 
-![activity_standard_launch.png](https://github.com/YuLan-account/draw-io-res/blob/main/learning-android-res/activity/activity_standard_launch.png?raw=true)
+<img src="https://github.com/YuLan-account/draw-io-res/blob/main/learning-android-res/activity/activity_standard_launch.png?raw=true" alt="activity_standard_launch.png" style="zoom:67%;" />
 
 
 
@@ -163,3 +163,4 @@ data类似于url，匹配规则同action，Intent中的data只要与activity声�
 ##### （3）category的匹配规则
 
 category也是一个字符串，但是匹配规则跟action完全不同，它要求如果intent含有某个categor，那么所有的category都必须在Intent-filter中定义，才匹配成功。
+
